@@ -19,17 +19,32 @@ const Main = () => {
       </div>
 
       {/** About section */}
-      <div id="about" className="h-screen flex flex-col justify-center">
-        <h2 className="text-5xl font-bold text-center mb-10 underline">
-          About
-        </h2>
-
+      <div id="about" className="h-screen flex flex-col justify-evenly">
         <div>
-          <p className="text-lg text-center">
-            Nice to meet you! like I said before my name is Noah and i'm a
-            fullstack developer (but I have a litle preferencis for the
-            front-end development <span>&#129312;</span>)
-          </p>
+          <h2 className="text-5xl font-bold text-center mb-10 underline">
+            About
+          </h2>
+
+          <div className=" flex flex-row items-center">
+            <img
+              className="w-72 h-auto mx-auto rounded-full"
+              src="/images/IMG_8174.png"
+              alt="noah's pic"
+            ></img>
+            <div className="w-3/6 mx-auto">
+              <p className="text-lg text-center">
+                Nice to meet you! like I said before my name is Noah and i'm a
+                fullstack developer.I'm a passionate developer who loves to be a
+                part of the development of web applications.
+                <br />
+                I'm always looking for new challenges and I'm always ready to
+                learn new things. I'm a fullstack developer, so I can work on
+                both the front-end and the back-end of a web application.
+                <br />I have a little preference for the front-end development
+                so i'm more comfortable with it !<span>&#129312;</span>
+              </p>
+            </div>
+          </div>
         </div>
 
         <h3 className="text-4xl font-bold text-center">My stacks</h3>
