@@ -47,7 +47,7 @@ const Main = () => {
           </div>
         </div>
 
-        <h3 className="text-4xl font-bold text-center">My stacks</h3>
+        <h3 className="text-4xl font-bold text-center">My Tech</h3>
 
         {/** infinite scroll component */}
         <div className="flex justify-end">
