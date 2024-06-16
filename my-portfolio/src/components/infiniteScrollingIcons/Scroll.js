@@ -1,4 +1,29 @@
+import React, { useEffect, useRef } from "react";
+
 const Scroll = () => {
+  const imagesRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const images = entry.target.querySelectorAll("img");
+            images.forEach((image) => {
+              image.classList.add("animate-fade-in");
+              image.classList.remove("opacity-0", "translate-y-20");
+            });
+          }
+        });
+      },
+      { root: null, rootMargin: "0px", threshold: 0.1 }
+    );
+
+    if (imagesRef.current) {
+      observer.observe(imagesRef.current);
+    }
+  }, []);
+
   const images = [
     { src: "/icons/adobe-photoshop-color.svg", alt: "photoshopIcon" },
     { src: "/icons/c-color.svg", alt: "cIcon" },
@@ -29,7 +54,7 @@ const Scroll = () => {
   ];
 
   return (
-    <div className="overflow-x-hidden w-full group">
+    <div className="overflow-x-hidden w-full group" ref={imagesRef}>
       <div className="relative flex animate-loop-scroll group-hover:paused">
         <div className="flex space-x-16">
           {images.concat(images).map((image, index) => (
@@ -37,7 +62,7 @@ const Scroll = () => {
               key={index}
               loading="lazy"
               src={image.src}
-              className="max-w-none w-10 h-10"
+              className="max-w-none w-10 h-10 opacity-0 translate-y-20"
               alt={image.alt}
             />
           ))}
