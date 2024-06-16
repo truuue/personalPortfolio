@@ -1,6 +1,5 @@
 import Scroll from "../infiniteScrollingIcons/Scroll";
 import SlidingText from "../slidingText/slidingText";
-import "./Main.css";
 
 const Main = () => {
   return (

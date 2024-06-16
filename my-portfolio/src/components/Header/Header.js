@@ -1,5 +1,3 @@
-import "./Header.css";
-
 const Header = () => {
   return (
     <header className="w-full flex justify-center items-center z-10 sticky top-[0.75rem]">
