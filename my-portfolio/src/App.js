@@ -8,7 +8,7 @@ function App() {
       <Header />
       <Main />
       <Footer />
-      <div class="fixed inset-0 h-full w-full z-[-1] bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
+      <div className="fixed inset-0 h-full w-full z-[-1] bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
     </>
   );
 }

@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
-    <footer className="">
-      <p>© 2021 My Portfolio</p>
+    <footer className="w-full flex flex-col justify-center items-center">
+      <p className=" text-gray-400">© 2024 Noah's Portfolio</p>
     </footer>
   );
 };
