@@ -1,4 +1,4 @@
-# Web Fetcher Tool <img  height="50px" align="right" src="https://www.svgrepo.com/show/69948/rat-looking-right.svg" alt="Rat logo">
+# My portfolio
 
 ## 📋 Table of contents
 
