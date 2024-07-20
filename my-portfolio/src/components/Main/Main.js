@@ -49,7 +49,7 @@ const Main = () => {
       {/** About section */}
       <div
         id="about"
-        className="h-screen flex flex-col justify-evenly p-4 sm:p-8"
+        className="h-full flex flex-col justify-evenly p-4 sm:p-8 sm:h-screen"
       >
         <div>
           <h2 className="text-4xl sm:text-5xl font-bold text-center mb-10 mt-5 underline">
@@ -58,7 +58,7 @@ const Main = () => {
 
           <div className="flex flex-col sm:flex-row items-center">
             <img
-              className="w-48 h-auto mx-auto sm:w-72 sm:rounded-[3rem] sm:shadow-2xl"
+              className="w-48 h-auto mx-auto rounded-[1rem] shadow-xl sm:w-72 sm:rounded-[3rem] sm:shadow-2xl"
               src="/images/Noah.JPG"
               alt="noah's pic"
             ></img>
@@ -79,7 +79,7 @@ const Main = () => {
         </div>
 
         {/** infinite scroll component */}
-        <div className="flex justify-center sm:justify-end mt-6 sm:mt-0">
+        <div className="flex justify-center sm:justify-end mt-6 sm:mt-0 max-[400px]:mt-16">
           <Scroll />
         </div>
       </div>
@@ -87,10 +87,10 @@ const Main = () => {
       {/** Projects section */}
       <div
         id="projects"
-        className="h-screen flex flex-col items-center justify-evenly p-4 sm:p-8"
+        className="h-full flex flex-col items-center justify-evenly p-4 sm:p-8 sm:h-screen"
       >
         <div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-center underline">
+          <h2 className="text-4xl sm:text-5xl font-bold text-center underline max-[400px]:mt-16">
             Projects
           </h2>
 
@@ -158,14 +158,14 @@ const Main = () => {
       {/** Contact section */}
       <div
         id="contact"
-        className="h-screen flex flex-col items-center justify-evenly mt-20 p-4 sm:p-8"
+        className="h-full flex flex-col items-center justify-evenly sm:mt-20 p-4 sm:p-8 sm:h-screen"
       >
         <div>
           <h2 className="text-4xl sm:text-5xl font-bold text-center underline mb-5">
             Contact
           </h2>
 
-          <p className="text-center sm:text-lg">
+          <p className="text-center sm:text-lg mb-5">
             If you want to contact me, you can send me an email here or you can
             send a message from{" "}
             <a
