@@ -79,7 +79,7 @@ const Main = () => {
         </div>
 
         {/** infinite scroll component */}
-        <div className="flex justify-center sm:justify-end mt-6 sm:mt-0 max-[400px]:mt-16">
+        <div className="flex justify-center sm:justify-end mt-6 sm:mt-0 max-[415px]:mt-16">
           <Scroll />
         </div>
       </div>
@@ -90,7 +90,7 @@ const Main = () => {
         className="h-full flex flex-col items-center justify-evenly p-4 sm:p-8 sm:h-screen"
       >
         <div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-center underline max-[400px]:mt-16">
+          <h2 className="text-4xl sm:text-5xl font-bold text-center underline max-[415px]:mt-16">
             Projects
           </h2>
 

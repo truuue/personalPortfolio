@@ -12,7 +12,9 @@ const Header = () => {
       <div className="sm:w-3/5 w-1/3 p-3 flex justify-between sm:justify-center backdrop-blur-md shadow-md border-solid rounded-[2rem]">
         <nav className="w-full sm:w-4/5">
           <div className="flex justify-between items-center sm:hidden">
-            <h1 className="text-xl font-bold">menu</h1>
+            <h1 className="font-medium w-4/5 flex justify-center items-center">
+              menu
+            </h1>
             <button className="text-xl" onClick={toggleMenu}>
               &#9776;
             </button>

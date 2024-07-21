@@ -1,6 +1,6 @@
 const SlidingText = () => {
   return (
-    <p className="text-lg text-center flex items-center justify-center max-[400px]:flex-col">
+    <p className="text-lg text-center flex items-center justify-center max-[500px]:flex-col">
       I'm a{" "}
       <span className="relative h-[1em] w-[6rem] overflow-hidden align-middle flex items-center">
         <span className="absolute left-0 top-0 h-full w-full translate-y-full animate-slide leading-none">
