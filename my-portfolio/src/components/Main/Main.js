@@ -111,7 +111,7 @@ const Main = () => {
 
         <div className="container h-1/2 mx-auto py-8">
           <div className="grid grid-cols-2 sm:grid-cols-4 grid-rows-2 gap-4">
-            <div className="col-span-2 row-span-2 p-4 rounded-lg border-2">
+            <div className="col-span-2 row-span-2 p-4 sm:border-r-2">
               <a
                 href="https://github.com/truuue/PhotoVernhet"
                 target="_blank"
@@ -129,27 +129,44 @@ const Main = () => {
                 <img
                   src="/images/photovernhet.png"
                   alt="photoVernhetProject"
-                  className="mt-4 rounded-md shadow-xl"
+                  className="mt-4 rounded-md shadow-xl object-cover w-full"
                 />
               </a>
             </div>
 
-            <div className="col-span-1 row-span-1 p-4 rounded-lg border-2">
+            <div className="col-span-1 row-span-1 p-4">
+              <a
+                href="https://github.com/truuue/webFetcher"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <h2 className="text-lg sm:text-xl font-bold mb-2">
+                  Web Fetcher:
+                </h2>
+              </a>
+              <img
+                src="./images/webfetcher.png"
+                alt="webFetcherProject"
+                className="mt-4 rounded-md shadow-xl object-cover h-44 w-full"
+              />
+            </div>
+
+            <div className="col-span-1 row-span-1 p-4">
               <a href="https://twelv.fr/" target="_blank" rel="noreferrer">
                 <h2 className="text-lg sm:text-xl font-bold mb-2">Twelv:</h2>
               </a>
+              <img
+                src="./images/twelv.png"
+                alt="twelv img"
+                className="mt-4 rounded-md shadow-xl object-cover h-44 w-full"
+              />
             </div>
 
-            <div className="col-span-1 row-span-1 p-4 rounded-lg border-2">
-              <h2 className="text-lg sm:text-xl font-bold mb-2">
-                Boulangerie Maurice:
-              </h2>
-            </div>
-
-            <div className="col-span-2 row-span-1 p-4 rounded-lg border-2">
+            <div className="col-span-2 row-span-1 p-4 sm:border-t-2">
               <h2 className="text-lg sm:text-xl font-bold mb-2">
                 Crédit Agricole:
               </h2>
+              <p className="text-center">Coming soon...</p>
             </div>
           </div>
         </div>
