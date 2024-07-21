@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import Scroll from "../infiniteScrollingIcons/Scroll";
 import SlidingText from "../slidingText/slidingText";
@@ -8,6 +8,8 @@ emailjs.init(process.env.REACT_APP_USERID);
 
 const Main = () => {
   const form = useRef();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState("");
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -24,9 +26,19 @@ const Main = () => {
       );
   };
 
+  const openModal = (imageSrc) => {
+    setSelectedImage(imageSrc);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedImage("");
+  };
+
   return (
     <main>
-      {/** Home section */}
+      {/* Home section */}
       <div
         id="home"
         className="h-screen flex flex-col items-center justify-center mt-[-2rem] gap-6 p-4 sm:p-8"
@@ -35,7 +47,7 @@ const Main = () => {
           <span>&#128075;</span> Hello, I'm Noah
         </h1>
 
-        {/** sliding text component */}
+        {/* sliding text component */}
         <SlidingText />
         <a href="#about">
           <img
@@ -46,7 +58,7 @@ const Main = () => {
         </a>
       </div>
 
-      {/** About section */}
+      {/* About section */}
       <div
         id="about"
         className="h-full flex flex-col justify-evenly p-4 sm:p-8 sm:h-screen"
@@ -78,13 +90,13 @@ const Main = () => {
           </div>
         </div>
 
-        {/** infinite scroll component */}
+        {/* infinite scroll component */}
         <div className="flex justify-center sm:justify-end mt-6 sm:mt-0 max-[415px]:mt-16">
           <Scroll />
         </div>
       </div>
 
-      {/** Projects section */}
+      {/* Projects section */}
       <div
         id="projects"
         className="h-full flex flex-col items-center justify-evenly p-4 sm:p-8 sm:h-screen"
@@ -111,9 +123,12 @@ const Main = () => {
 
         <div className="container h-1/2 mx-auto py-8">
           <div className="grid grid-cols-2 sm:grid-cols-4 grid-rows-2 gap-4">
-            <div className="col-span-2 row-span-2 p-4 sm:border-r-2">
+            <div
+              className="col-span-2 row-span-2 p-4 sm:border-r-2 cursor-pointer"
+              onClick={() => openModal("/images/photovernhet.png")}
+            >
               <a
-                href="https://github.com/truuue/PhotoVernhet"
+                href="https://medium.com/@6233/my-portfolio-project-photo-vernhet-d1825fac5e95"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -121,20 +136,17 @@ const Main = () => {
                   End of year project:
                 </h2>
               </a>
-              <a
-                href="https://medium.com/@6233/my-portfolio-project-photo-vernhet-d1825fac5e95"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img
-                  src="/images/photovernhet.png"
-                  alt="photoVernhetProject"
-                  className="mt-4 rounded-md shadow-xl object-cover w-full"
-                />
-              </a>
+              <img
+                src="/images/photovernhet.png"
+                alt="photoVernhetProject"
+                className="mt-4 rounded-md shadow-xl object-cover w-full"
+              />
             </div>
 
-            <div className="col-span-1 row-span-1 p-4">
+            <div
+              className="col-span-1 row-span-1 p-4 cursor-pointer"
+              onClick={() => openModal("./images/webfetcher.png")}
+            >
               <a
                 href="https://github.com/truuue/webFetcher"
                 target="_blank"
@@ -151,7 +163,10 @@ const Main = () => {
               />
             </div>
 
-            <div className="col-span-1 row-span-1 p-4">
+            <div
+              className="col-span-1 row-span-1 p-4 cursor-pointer"
+              onClick={() => openModal("./images/twelv.png")}
+            >
               <a href="https://twelv.fr/" target="_blank" rel="noreferrer">
                 <h2 className="text-lg sm:text-xl font-bold mb-2">Twelv:</h2>
               </a>
@@ -172,7 +187,7 @@ const Main = () => {
         </div>
       </div>
 
-      {/** Contact section */}
+      {/* Contact section */}
       <div
         id="contact"
         className="h-full flex flex-col items-center justify-evenly sm:mt-20 p-4 sm:p-8 sm:h-screen"
@@ -239,6 +254,24 @@ const Main = () => {
           </div>
         </div>
       </div>
+
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75">
+          <div className="relative max-w-full max-h-full overflow-auto">
+            <img
+              src={selectedImage}
+              alt="Enlarged project"
+              className="w-auto max-w-full max-h-[80vh] rounded-xl shadow-xl"
+            />
+            <button
+              className="absolute top-5 right-5 text-black text-3xl bg-white rounded-lg shadow-xl size-10 hover:bg-gray-200"
+              onClick={closeModal}
+            >
+              &times;
+            </button>
+          </div>
+        </div>
+      )}
     </main>
   );
 };
