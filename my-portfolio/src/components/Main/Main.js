@@ -136,7 +136,7 @@ const Main = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <h2 className="text-lg sm:text-xl font-bold mb-2">
+                <h2 className="text-lg sm:text-xl font-bold mb-2 relative inline-block after:content-[''] after:absolute after:w-0 after:left-0 after:-bottom-1 after:h-[2px] after:bg-black after:transition-width after:duration-300 hover:after:w-full">
                   End of year project:
                 </h2>
               </a>
@@ -156,7 +156,7 @@ const Main = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <h2 className="text-lg sm:text-xl font-bold mb-2">
+                <h2 className="text-lg sm:text-xl font-bold mb-2 relative inline-block after:content-[''] after:absolute after:w-0 after:left-0 after:-bottom-1 after:h-[2px] after:bg-black after:transition-width after:duration-300 hover:after:w-full">
                   Web Fetcher:
                 </h2>
               </a>
@@ -172,7 +172,9 @@ const Main = () => {
               onClick={() => openModal("./images/twelv.png")}
             >
               <a href="https://twelv.fr/" target="_blank" rel="noreferrer">
-                <h2 className="text-lg sm:text-xl font-bold mb-2">Twelv:</h2>
+                <h2 className="text-lg sm:text-xl font-bold mb-2 relative inline-block after:content-[''] after:absolute after:w-0 after:left-0 after:-bottom-1 after:h-[2px] after:bg-black after:transition-width after:duration-300 hover:after:w-full">
+                  Twelv:
+                </h2>
               </a>
               <img
                 src="./images/twelv.png"
@@ -182,7 +184,7 @@ const Main = () => {
             </div>
 
             <div className="col-span-2 row-span-1 p-4 sm:border-t-2">
-              <h2 className="text-lg sm:text-xl font-bold mb-2">
+              <h2 className="text-lg sm:text-xl font-bold mb-2 relative inline-block after:content-[''] after:absolute after:w-0 after:left-0 after:-bottom-1 after:h-[2px] after:bg-black after:transition-width after:duration-300 hover:after:w-full">
                 Crédit Agricole:
               </h2>
               <p className="text-center">Coming soon...</p>
