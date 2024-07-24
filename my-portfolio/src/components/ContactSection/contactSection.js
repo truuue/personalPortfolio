@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
 const ContactSection = ({ form, sendEmail }) => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true); // Démarrer le loader
+    try {
+      await sendEmail(e);
+    } finally {
+      setIsLoading(false); // Arrêter le loader, même en cas d'erreur
+    }
+  };
+
   return (
     <div
       id="contact"
@@ -30,7 +42,7 @@ const ContactSection = ({ form, sendEmail }) => {
           <div id="display">
             <form
               ref={form}
-              onSubmit={sendEmail}
+              onSubmit={handleSubmit}
               className="flex p-2 min-h-[28.5rem]"
             >
               <div className="flex flex-col items-center justify-evenly">
@@ -56,9 +68,38 @@ const ContactSection = ({ form, sendEmail }) => {
                 ></textarea>
                 <button
                   type="submit"
+                  disabled={isLoading}
                   className="flex items-center justify-center h-10 p-3 mt-5 rounded-lg bg-gray-100 text-gray-400 border-2 shadow hover:bg-gray-200 hover:text-gray-500"
                 >
-                  Send
+                  {isLoading ? (
+                    <div className="w-8 h-8 flex items-center justify-center">
+                      <svg
+                        className="w-8 h-8 animate-spin"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 50 50"
+                        xmlSpace="preserve"
+                      >
+                        <path
+                          fill="#000"
+                          d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z"
+                        >
+                          <animateTransform
+                            attributeType="xml"
+                            attributeName="transform"
+                            type="rotate"
+                            from="0 25 25"
+                            to="360 25 25"
+                            dur="1s"
+                            repeatCount="indefinite"
+                          />
+                        </path>
+                      </svg>
+                    </div>
+                  ) : (
+                    "Send"
+                  )}
                 </button>
               </div>
             </form>

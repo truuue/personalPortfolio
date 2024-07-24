@@ -17,7 +17,7 @@ const Main = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs
+    return emailjs
       .sendForm("portfolio", process.env.REACT_APP_TEMPLATEID, form.current)
       .then(
         (result) => {
