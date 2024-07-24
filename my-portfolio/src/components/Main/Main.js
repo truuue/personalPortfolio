@@ -119,6 +119,10 @@ const Main = () => {
             </a>
             .
           </p>
+          <p className="text-center text-sm mt-1 text-gray-500">
+            You can click on each project's images to expand them or click on
+            each title for more information.
+          </p>
         </div>
 
         <div className="container h-1/2 mx-auto py-8">

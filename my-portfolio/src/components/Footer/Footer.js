@@ -20,7 +20,7 @@ const Footer = () => {
           </a>
           <p className="mx-1">or</p>
           <a
-            href="https://www.github.com/NoahVernhet"
+            href="https://www.github.com/truuue"
             target="_blank"
             rel="noreferrer"
             className="hover:text-gray-500"
