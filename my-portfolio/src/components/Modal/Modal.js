@@ -1,18 +1,18 @@
-import React from "react";
-
 const Modal = ({ isOpen, closeModal, selectedImage }) => {
+  console.log("Modal render:", { isOpen, selectedImage });
+
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75">
-      <div className="relative max-w-full max-h-full overflow-auto">
+      <div className="relative max-h-full max-w-full overflow-auto">
         <img
           src={selectedImage}
           alt="Enlarged project"
-          className="w-auto max-w-full max-h-[80vh] rounded-xl shadow-xl"
+          className="max-h-[80vh] w-auto max-w-full rounded-xl shadow-xl"
         />
         <button
-          className="absolute top-5 right-5 text-black text-3xl bg-white rounded-lg shadow-xl size-10 hover:bg-gray-200"
+          className="absolute right-5 top-5 size-10 rounded-lg border border-gray-500 bg-white text-3xl text-black shadow-lg hover:bg-gray-200 hover:shadow-xl"
           onClick={closeModal}
         >
           &times;
