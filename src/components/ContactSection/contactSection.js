@@ -102,7 +102,7 @@ const ContactSection = ({ form, sendEmail }) => {
       className="flex h-full flex-col items-center justify-evenly p-4 sm:mt-20 sm:h-screen sm:p-8"
     >
       <div>
-        <h2 className="mb-4 text-center text-3xl font-bold text-primary sm:mb-8 sm:text-4xl dark:text-white">
+        <h2 className="mb-4 text-center text-3xl font-bold text-primary sm:mb-8 sm:text-4xl">
           Contact
         </h2>
         <p className="mb-5 text-center sm:text-lg">
@@ -127,7 +127,7 @@ const ContactSection = ({ form, sendEmail }) => {
             onSubmit={handleSubmit}
             className="flex h-full w-4/5 flex-col items-center justify-evenly"
           >
-            <div className="flex w-full flex-col items-center justify-evenly space-y-2">
+            <div className="flex w-full flex-col items-center justify-evenly space-y-6">
               <input
                 type="text"
                 name="from_name"
@@ -151,7 +151,7 @@ const ContactSection = ({ form, sendEmail }) => {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="flex h-10 w-full items-center justify-center rounded-lg border-2 bg-primary/5 p-2 text-sm text-primary/40 shadow transition-all duration-300 hover:bg-primary/10 hover:text-primary/50"
+                className="flex h-10 w-full items-center justify-center rounded-lg border-2 bg-primary/5 p-2 text-sm text-primary/40 shadow transition-all duration-300 hover:bg-primary/10 hover:text-primary/50 dark:text-white dark:hover:bg-primary/50 dark:hover:text-white"
               >
                 {isLoading ? (
                   <div className="flex size-8 items-center justify-center">

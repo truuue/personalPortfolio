@@ -24,7 +24,7 @@ const BentoCard = ({
 }) => (
   <div
     className={cn(
-      "group relative cursor-pointer overflow-hidden rounded-xl bg-white shadow-md transition-all hover:shadow-lg dark:bg-gray-800",
+      "group relative cursor-pointer overflow-hidden rounded-xl bg-white shadow-md transition-all hover:shadow-lg",
       className
     )}
     onClick={openModal}
@@ -48,10 +48,10 @@ const ProjectsSection = ({ openModal }) => {
   return (
     <div id="projects" className="py-10 sm:py-20">
       <div className="container mx-auto px-4">
-        <h2 className="mb-4 text-center text-3xl font-bold text-primary sm:mb-8 sm:text-4xl dark:text-white">
+        <h2 className="mb-4 text-center text-3xl font-bold text-primary sm:mb-8 sm:text-4xl">
           Mes Projets
         </h2>
-        <p className="mx-auto mb-8 max-w-3xl text-center text-base text-primary sm:mb-16 sm:text-lg md:text-nowrap dark:text-gray-300">
+        <p className="mx-auto mb-8 max-w-3xl text-center text-base text-primary sm:mb-16 sm:text-lg md:text-nowrap">
           Here are some of the projects I have worked on. You can check them out
           on my{" "}
           <a
