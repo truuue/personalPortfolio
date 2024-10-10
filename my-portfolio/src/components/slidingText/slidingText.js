@@ -1,17 +1,55 @@
+"use client";
+
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
+
+// Fonction utilitaire pour combiner les classes CSS
+const cn = (...classes) => classes.filter(Boolean).join(" ");
+
+const WordRotate = ({
+  words,
+  duration = 2500,
+  framerProps = {
+    initial: { opacity: 0, y: -50 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: 50 },
+    transition: { duration: 0.25, ease: "easeOut" },
+  },
+  className,
+}) => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, duration);
+
+    // Nettoyer l'intervalle lors du démontage
+    return () => clearInterval(interval);
+  }, [words, duration]);
+
+  return (
+    <span className="inline-block overflow-hidden py-2">
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={words[index]}
+          className={cn(className)}
+          {...framerProps}
+        >
+          {words[index]}
+        </motion.span>
+      </AnimatePresence>
+    </span>
+  );
+};
+
 const SlidingText = () => {
   return (
-    <p className="text-lg text-center flex items-center justify-center max-[500px]:flex-col">
-      I'm a{" "}
-      <span className="relative h-[1em] w-[6rem] overflow-hidden align-middle flex items-center">
-        <span className="absolute left-0 top-0 h-full w-full translate-y-full animate-slide leading-none">
-          Front-end
-        </span>
-        <span className="absolute left-0 top-0 h-full w-full translate-y-full animate-slide leading-none [animation-delay:3s]">
-          Back-end
-        </span>
-      </span>{" "}
-      developer so a Full-Stack Developer!
-    </p>
+    <div className="flex items-center justify-center text-center text-lg max-[500px]:flex-col">
+      <span>Je suis un</span>
+      <WordRotate words={["Front-end", "Back-end"]} className="mx-2" />
+      <span>développeur, donc un développeur Full-Stack !</span>
+    </div>
   );
 };
 
