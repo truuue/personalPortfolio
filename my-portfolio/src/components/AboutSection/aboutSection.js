@@ -1,23 +1,27 @@
-import React from "react";
+import { motion } from "framer-motion";
 import Scroll from "../infiniteScrollingIcons/Scroll";
 
 const AboutSection = () => {
   return (
     <div
       id="about"
-      className="h-full flex flex-col justify-evenly p-4 sm:p-8 sm:h-screen"
+      className="flex h-full flex-col justify-evenly p-4 sm:h-screen sm:p-8"
     >
-      <div>
-        <h2 className="text-4xl sm:text-5xl font-bold text-center mb-10 mt-5 underline">
+      <>
+        <h2 className="mb-10 mt-5 text-center text-4xl font-bold underline sm:text-5xl">
           About
         </h2>
-        <div className="flex flex-col sm:flex-row items-center">
-          <img
-            className="w-48 h-auto mx-auto rounded-[1rem] shadow-xl sm:w-72 sm:rounded-[3rem] sm:shadow-2xl"
+        <div className="flex flex-col items-center sm:flex-row">
+          <motion.img
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5 }}
+            className="mx-auto h-auto w-48 rounded-[1rem] shadow-xl sm:w-72 sm:rounded-[3rem] sm:shadow-2xl"
             src="/images/Noah.JPG"
-            alt="noah's pic"
+            alt="photo de noah"
           />
-          <div className="sm:w-3/6 mx-auto mt-6 sm:mt-0">
+          <div className="mx-auto mt-6 sm:mt-0 sm:w-3/6">
             <p className="text-center sm:text-lg">
               Nice to meet you! like I said before my name is Noah and I'm a
               fullstack developer. I'm a passionate developer who loves to be a
@@ -31,8 +35,8 @@ const AboutSection = () => {
             </p>
           </div>
         </div>
-      </div>
-      <div className="flex justify-center sm:justify-end mt-6 sm:mt-0 max-[415px]:mt-16">
+      </>
+      <div className="mt-6 flex justify-center max-[415px]:mt-16 sm:mt-0 sm:justify-end">
         <Scroll />
       </div>
     </div>
