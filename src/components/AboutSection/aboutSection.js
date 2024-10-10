@@ -5,10 +5,10 @@ const AboutSection = () => {
   return (
     <div
       id="about"
-      className="flex h-full flex-col justify-evenly p-4 sm:h-screen sm:p-8"
+      className="flex h-full flex-col justify-evenly p-4 text-primary sm:h-screen sm:p-8"
     >
       <>
-        <h2 className="mb-4 text-center text-3xl font-bold text-gray-900 sm:mb-8 sm:text-4xl dark:text-white">
+        <h2 className="mb-4 text-center text-3xl font-bold text-primary sm:mb-8 sm:text-4xl dark:text-white">
           About
         </h2>
         <div className="flex flex-col items-center sm:flex-row">

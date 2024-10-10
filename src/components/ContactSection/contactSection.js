@@ -102,7 +102,7 @@ const ContactSection = ({ form, sendEmail }) => {
       className="flex h-full flex-col items-center justify-evenly p-4 sm:mt-20 sm:h-screen sm:p-8"
     >
       <div>
-        <h2 className="mb-4 text-center text-3xl font-bold text-gray-900 sm:mb-8 sm:text-4xl dark:text-white">
+        <h2 className="mb-4 text-center text-3xl font-bold text-primary sm:mb-8 sm:text-4xl dark:text-white">
           Contact
         </h2>
         <p className="mb-5 text-center sm:text-lg">
@@ -112,7 +112,7 @@ const ContactSection = ({ form, sendEmail }) => {
             href="https://www.linkedin.com/in/noah-vernhet/"
             target="_blank"
             rel="noreferrer"
-            className="hover:underline hover:text-gray-500 transition-all duration-300"
+            className="transition-all duration-300 hover:text-primary/70 hover:underline"
           >
             LinkedIn
           </a>
@@ -132,26 +132,26 @@ const ContactSection = ({ form, sendEmail }) => {
                 type="text"
                 name="from_name"
                 placeholder="Nom"
-                className="h-10 w-full rounded-lg border-2 p-2 text-sm shadow transition-all duration-300 focus:border-gray-500 focus:outline-none"
+                className="h-10 w-full rounded-lg border-2 p-2 text-sm shadow transition-all duration-300 focus:border-primary/70 focus:outline-none"
                 required
               />
               <input
                 type="email"
                 name="reply_to"
                 placeholder="Email"
-                className="h-10 w-full rounded-lg border-2 p-2 text-sm shadow transition-all duration-300 focus:border-gray-500 focus:outline-none"
+                className="h-10 w-full rounded-lg border-2 p-2 text-sm shadow transition-all duration-300 focus:border-primary/70 focus:outline-none"
                 required
               />
               <textarea
                 name="message"
                 placeholder="Message"
-                className="h-32 w-full resize-none rounded-lg border-2 p-2 text-sm shadow transition-all duration-300 focus:border-gray-500 focus:outline-none"
+                className="h-32 w-full resize-none rounded-lg border-2 p-2 text-sm shadow transition-all duration-300 focus:border-primary/70 focus:outline-none"
                 required
               ></textarea>
               <button
                 type="submit"
                 disabled={isLoading}
-                className="flex h-10 w-full items-center justify-center rounded-lg border-2 bg-gray-100 p-2 text-sm text-gray-400 shadow transition-all duration-300 hover:bg-gray-200 hover:text-gray-500"
+                className="flex h-10 w-full items-center justify-center rounded-lg border-2 bg-primary/5 p-2 text-sm text-primary/40 shadow transition-all duration-300 hover:bg-primary/10 hover:text-primary/50"
               >
                 {isLoading ? (
                   <div className="flex size-8 items-center justify-center">

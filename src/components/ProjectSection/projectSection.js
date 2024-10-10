@@ -48,14 +48,14 @@ const ProjectsSection = ({ openModal }) => {
   return (
     <div id="projects" className="py-10 sm:py-20">
       <div className="container mx-auto px-4">
-        <h2 className="mb-4 text-center text-3xl font-bold text-gray-900 sm:mb-8 sm:text-4xl dark:text-white">
+        <h2 className="mb-4 text-center text-3xl font-bold text-primary sm:mb-8 sm:text-4xl dark:text-white">
           Mes Projets
         </h2>
-        <p className="mx-auto mb-8 max-w-3xl text-center text-base text-gray-600 sm:mb-16 sm:text-lg md:text-nowrap dark:text-gray-300">
+        <p className="mx-auto mb-8 max-w-3xl text-center text-base text-primary sm:mb-16 sm:text-lg md:text-nowrap dark:text-gray-300">
           Here are some of the projects I have worked on. You can check them out
           on my{" "}
           <a
-            className="transition-all duration-300 hover:text-gray-500 hover:underline"
+            className="transition-all duration-300 hover:text-primary/70 hover:underline"
             href="https://github.com/truuue"
             target="_blank"
             rel="noreferrer"

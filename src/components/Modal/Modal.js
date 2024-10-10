@@ -12,7 +12,7 @@ const Modal = ({ isOpen, closeModal, selectedImage }) => {
           className="max-h-[80vh] w-auto max-w-full rounded-xl shadow-xl"
         />
         <button
-          className="absolute right-5 top-5 size-10 rounded-lg border border-gray-500 bg-white text-3xl text-black shadow-lg hover:bg-gray-200 hover:shadow-xl"
+          className="absolute right-5 top-5 size-10 rounded-lg border border-primary/50 bg-white text-3xl text-black shadow-lg transition-all duration-300 hover:bg-primary/10 hover:shadow-xl"
           onClick={closeModal}
         >
           &times;

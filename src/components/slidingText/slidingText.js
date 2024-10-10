@@ -29,7 +29,7 @@ const WordRotate = ({
   }, [words, duration]);
 
   return (
-    <span className="inline-block overflow-hidden py-2">
+    <span className="inline-block overflow-hidden py-2 text-primary">
       <AnimatePresence mode="wait">
         <motion.span
           key={words[index]}
@@ -45,7 +45,7 @@ const WordRotate = ({
 
 const SlidingText = () => {
   return (
-    <div className="flex items-center justify-center text-center text-lg max-[500px]:flex-col">
+    <div className="flex items-center justify-center text-center text-lg text-primary max-[500px]:flex-col">
       <span>Je suis un</span>
       <WordRotate words={["Front-end", "Back-end"]} className="mx-2" />
       <span>développeur, donc un développeur Full-Stack !</span>

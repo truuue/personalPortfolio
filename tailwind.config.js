@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "hsl(var(--primary))",
+      },
       animation: {
         "loop-scroll": "loop-scroll 50s linear infinite",
         slide: "slide 6s ease-in-out infinite",
