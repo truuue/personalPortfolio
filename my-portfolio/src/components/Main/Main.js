@@ -4,7 +4,6 @@ import AboutSection from "../AboutSection/aboutSection";
 import ContactSection from "../ContactSection/contactSection";
 import HomeSection from "../HomeSection/homeSection";
 import ProjectsSection from "../ProjectSection/projectSection";
-import "./Main.css";
 
 emailjs.init(process.env.REACT_APP_USERID);
 
