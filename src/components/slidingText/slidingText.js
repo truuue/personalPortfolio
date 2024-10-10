@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // Fonction utilitaire pour combiner les classes CSS
 const cn = (...classes) => classes.filter(Boolean).join(" ");
@@ -46,11 +46,11 @@ const WordRotate = ({
 const SlidingText = () => {
   return (
     <div className="flex items-center justify-center text-center text-lg text-primary max-[500px]:flex-col">
-      <span>Je suis un</span>
+      <span>I am a</span>
       <WordRotate words={["Front-end", "Back-end"]} className="mx-2" />
-      <span>développeur, donc un développeur Full-Stack !</span>
+      <span>developer, so a Full-Stack developer !</span>
     </div>
   );
 };
 
-export default SlidingText;
+export default React.memo(SlidingText);
