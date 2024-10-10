@@ -1,29 +1,50 @@
-import React, { useEffect, useRef } from "react";
+const cn = (...classes) => classes.filter(Boolean).join(" ");
+
+const Marquee = ({
+  className,
+  reverse,
+  pauseOnHover = false,
+  children,
+  vertical = false,
+  ...props
+}) => {
+  return (
+    <div
+      {...props}
+      className={cn(
+        "group flex overflow-hidden [--duration:50s] [--gap:1rem]",
+        vertical ? "flex-col" : "flex-row",
+        className
+      )}
+    >
+      <div
+        className={cn(
+          "flex shrink-0 justify-around gap-[--gap]",
+          vertical ? "flex-col" : "flex-row",
+          vertical ? "animate-marquee-vertical" : "animate-marquee",
+          reverse ? "animate-reverse" : "",
+          pauseOnHover ? "group-hover:pause-animation" : ""
+        )}
+      >
+        {children}
+      </div>
+      <div
+        className={cn(
+          "flex shrink-0 justify-around gap-[--gap]",
+          vertical ? "flex-col" : "flex-row",
+          vertical ? "animate-marquee-vertical" : "animate-marquee",
+          reverse ? "animate-reverse" : "",
+          pauseOnHover ? "group-hover:pause-animation" : ""
+        )}
+        aria-hidden="true"
+      >
+        {children}
+      </div>
+    </div>
+  );
+};
 
 const Scroll = () => {
-  const imagesRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const images = entry.target.querySelectorAll("img");
-            images.forEach((image) => {
-              image.classList.add("animate-fade-in");
-              image.classList.remove("opacity-0", "translate-y-20");
-            });
-          }
-        });
-      },
-      { root: null, rootMargin: "0px", threshold: 0.1 }
-    );
-
-    if (imagesRef.current) {
-      observer.observe(imagesRef.current);
-    }
-  }, []);
-
   const images = [
     { src: "/icons/adobe-photoshop-color.svg", alt: "photoshopIcon" },
     { src: "/icons/c-color.svg", alt: "cIcon" },
@@ -54,20 +75,20 @@ const Scroll = () => {
   ];
 
   return (
-    <div className="overflow-x-hidden w-full group" ref={imagesRef}>
-      <div className="relative flex animate-loop-scroll group-hover:paused">
-        <div className="flex space-x-16">
-          {images.concat(images).map((image, index) => (
-            <img
-              key={index}
-              loading="lazy"
-              src={image.src}
-              className="max-w-none w-10 h-10 opacity-0 translate-y-20"
-              alt={image.alt}
-            />
-          ))}
-        </div>
-      </div>
+    <div className="relative w-full overflow-hidden">
+      <div className="absolute bottom-0 left-0 top-0 z-10 w-16 bg-gradient-to-r from-white to-transparent"></div>
+      <div className="absolute bottom-0 right-0 top-0 z-10 w-16 bg-gradient-to-l from-white to-transparent"></div>
+      <Marquee className="w-full py-2" pauseOnHover={true}>
+        {images.map((image, index) => (
+          <img
+            key={index}
+            loading="lazy"
+            src={image.src}
+            className="mx-8 h-10 w-10 object-contain"
+            alt={image.alt}
+          />
+        ))}
+      </Marquee>
     </div>
   );
 };
