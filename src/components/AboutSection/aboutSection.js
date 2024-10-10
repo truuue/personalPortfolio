@@ -8,7 +8,7 @@ const AboutSection = () => {
       className="flex h-full flex-col justify-evenly p-4 sm:h-screen sm:p-8"
     >
       <>
-        <h2 className="mb-10 mt-5 text-center text-4xl font-bold underline sm:text-5xl">
+        <h2 className="mb-4 text-center text-3xl font-bold text-gray-900 sm:mb-8 sm:text-4xl dark:text-white">
           About
         </h2>
         <div className="flex flex-col items-center sm:flex-row">

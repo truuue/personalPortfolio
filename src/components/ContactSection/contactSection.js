@@ -102,17 +102,17 @@ const ContactSection = ({ form, sendEmail }) => {
       className="flex h-full flex-col items-center justify-evenly p-4 sm:mt-20 sm:h-screen sm:p-8"
     >
       <div>
-        <h2 className="mb-5 text-center text-4xl font-bold underline sm:text-5xl">
+        <h2 className="mb-4 text-center text-3xl font-bold text-gray-900 sm:mb-8 sm:text-4xl dark:text-white">
           Contact
         </h2>
         <p className="mb-5 text-center sm:text-lg">
-          Si vous souhaitez me contacter, vous pouvez m'envoyer un e-mail ici ou
-          m'envoyer un message via{" "}
+          If you want to contact me, you can send me an email here or you can
+          send a message from{" "}
           <a
             href="https://www.linkedin.com/in/noah-vernhet/"
             target="_blank"
             rel="noreferrer"
-            className="underline hover:text-gray-500"
+            className="hover:underline hover:text-gray-500 transition-all duration-300"
           >
             LinkedIn
           </a>
@@ -180,7 +180,7 @@ const ContactSection = ({ form, sendEmail }) => {
                     </svg>
                   </div>
                 ) : (
-                  "Envoyer"
+                  "Send"
                 )}
               </button>
             </div>
