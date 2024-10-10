@@ -56,6 +56,9 @@ module.exports = {
         ".pause-animation": {
           "animation-play-state": "paused",
         },
+        ".will-change-transform": {
+          "will-change": "transform",
+        },
       };
       addUtilities(newUtilities, ["group-hover"]);
     },

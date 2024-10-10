@@ -1,4 +1,4 @@
-import React, { useState, lazy, Suspense } from "react";
+import React, { useState, lazy, Suspense, useEffect } from "react";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
@@ -7,6 +7,11 @@ const Modal = lazy(() => import("./components/Modal/Modal"));
 
 function App() {
   const [modalImage, setModalImage] = useState(null);
+
+  useEffect(() => {
+    const preloadModal = () => import("./components/Modal/Modal");
+    preloadModal();
+  }, []);
 
   const openModal = (imageSrc) => {
     console.log("openModal called with:", imageSrc);

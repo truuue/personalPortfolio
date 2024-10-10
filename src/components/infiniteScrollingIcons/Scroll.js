@@ -1,48 +1,52 @@
+import React from "react";
+
 const cn = (...classes) => classes.filter(Boolean).join(" ");
 
-const Marquee = ({
-  className,
-  reverse,
-  pauseOnHover = false,
-  children,
-  vertical = false,
-  ...props
-}) => {
-  return (
-    <div
-      {...props}
-      className={cn(
-        "group flex overflow-hidden [--duration:50s] [--gap:1rem]",
-        vertical ? "flex-col" : "flex-row",
-        className
-      )}
-    >
+const Marquee = React.memo(
+  ({
+    className,
+    reverse,
+    pauseOnHover = false,
+    children,
+    vertical = false,
+    ...props
+  }) => {
+    return (
       <div
+        {...props}
         className={cn(
-          "flex shrink-0 justify-around gap-[--gap]",
+          "group flex overflow-hidden [--duration:50s] [--gap:1rem]",
           vertical ? "flex-col" : "flex-row",
-          vertical ? "animate-marquee-vertical" : "animate-marquee",
-          reverse ? "animate-reverse" : "",
-          pauseOnHover ? "group-hover:pause-animation" : ""
+          className
         )}
       >
-        {children}
+        <div
+          className={cn(
+            "flex shrink-0 justify-around gap-[--gap] will-change-transform",
+            vertical ? "flex-col" : "flex-row",
+            vertical ? "animate-marquee-vertical" : "animate-marquee",
+            reverse ? "animate-reverse" : "",
+            pauseOnHover ? "group-hover:pause-animation" : ""
+          )}
+        >
+          {children}
+        </div>
+        <div
+          className={cn(
+            "flex shrink-0 justify-around gap-[--gap] will-change-transform",
+            vertical ? "flex-col" : "flex-row",
+            vertical ? "animate-marquee-vertical" : "animate-marquee",
+            reverse ? "animate-reverse" : "",
+            pauseOnHover ? "group-hover:pause-animation" : ""
+          )}
+          aria-hidden="true"
+        >
+          {children}
+        </div>
       </div>
-      <div
-        className={cn(
-          "flex shrink-0 justify-around gap-[--gap]",
-          vertical ? "flex-col" : "flex-row",
-          vertical ? "animate-marquee-vertical" : "animate-marquee",
-          reverse ? "animate-reverse" : "",
-          pauseOnHover ? "group-hover:pause-animation" : ""
-        )}
-        aria-hidden="true"
-      >
-        {children}
-      </div>
-    </div>
-  );
-};
+    );
+  }
+);
 
 const Scroll = () => {
   const images = [
@@ -84,7 +88,7 @@ const Scroll = () => {
             key={index}
             loading="lazy"
             src={image.src}
-            className="mx-8 h-10 w-10 object-contain"
+            className="mx-8 size-10 object-contain"
             alt={image.alt}
           />
         ))}
