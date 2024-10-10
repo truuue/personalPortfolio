@@ -1,18 +1,15 @@
-import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com";
-import HomeSection from "../HomeSection/homeSection";
+import { useRef } from "react";
 import AboutSection from "../AboutSection/aboutSection";
-import ProjectsSection from "../ProjectSection/projectSection";
 import ContactSection from "../ContactSection/contactSection";
-import Modal from "../Modal/modal";
+import HomeSection from "../HomeSection/homeSection";
+import ProjectsSection from "../ProjectSection/projectSection";
 import "./Main.css";
 
 emailjs.init(process.env.REACT_APP_USERID);
 
-const Main = () => {
+const Main = ({ openModal }) => {
   const form = useRef();
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState("");
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -29,27 +26,12 @@ const Main = () => {
       );
   };
 
-  const openModal = (imageSrc) => {
-    setSelectedImage(imageSrc);
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedImage("");
-  };
-
   return (
     <main>
       <HomeSection />
       <AboutSection />
       <ProjectsSection openModal={openModal} />
       <ContactSection form={form} sendEmail={sendEmail} />
-      <Modal
-        isOpen={isModalOpen}
-        closeModal={closeModal}
-        selectedImage={selectedImage}
-      />
     </main>
   );
 };

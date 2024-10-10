@@ -1,20 +1,62 @@
-import React from "react";
+const cn = (...classes) => classes.filter(Boolean).join(" ");
+
+const BentoGrid = ({ children, className }) => {
+  return (
+    <div
+      className={cn(
+        "mx-auto grid max-w-4xl grid-cols-1 gap-4 sm:grid-cols-6",
+        className
+      )}
+    >
+      {children}
+    </div>
+  );
+};
+
+const BentoCard = ({
+  name,
+  className,
+  background,
+  description,
+  href,
+  cta,
+  openModal,
+}) => (
+  <div
+    className={cn(
+      "group relative cursor-pointer overflow-hidden rounded-xl bg-white shadow-md transition-all hover:shadow-lg dark:bg-gray-800",
+      className
+    )}
+    onClick={openModal}
+  >
+    <div className="absolute inset-0 z-0">{background}</div>
+    <div className="relative z-10 flex h-full flex-col justify-end bg-gradient-to-t from-black/95 to-transparent p-6">
+      <h3 className="mb-2 text-xl font-bold text-white">{name}</h3>
+      <p className="mb-4 text-sm text-gray-200">{description}</p>
+      <a
+        href={href}
+        className="inline-block rounded-md bg-white px-4 py-2 text-sm font-medium text-gray-900 transition-colors hover:bg-gray-100"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {cta}
+      </a>
+    </div>
+  </div>
+);
 
 const ProjectsSection = ({ openModal }) => {
   return (
-    <div
-      id="projects"
-      className="h-full flex flex-col items-center justify-evenly p-4 sm:p-8 sm:h-screen"
-    >
-      <div>
-        <h2 className="text-4xl sm:text-5xl font-bold text-center underline max-[415px]:mt-16">
-          Projects
+    <div id="projects" className="py-10 sm:py-20">
+      <div className="container mx-auto px-4">
+        <h2 className="mb-4 text-center text-3xl font-bold text-gray-900 sm:mb-8 sm:text-4xl dark:text-white">
+          Mes Projets
         </h2>
-        <p className="text-center sm:text-lg mt-5">
-          Here are some of the projects I have worked on. You can check them out
-          on my{" "}
+        <p className="mx-auto mb-8 max-w-3xl text-center text-base text-gray-600 sm:mb-16 sm:text-lg dark:text-gray-300">
+          Découvrez une sélection de mes projets récents. Chacun représente un
+          défi unique et une opportunité d'apprentissage. Pour plus de détails,
+          visitez mon{" "}
           <a
-            className="hover:text-gray-500 underline"
+            className="text-blue-500 hover:underline"
             href="https://github.com/truuue"
             target="_blank"
             rel="noreferrer"
@@ -23,73 +65,68 @@ const ProjectsSection = ({ openModal }) => {
           </a>
           .
         </p>
-        <p className="text-center text-sm mt-1 text-gray-500">
-          You can click on each project's images to expand them or click on each
-          title for more information.
-        </p>
-      </div>
-      <div className="container h-1/2 mx-auto py-8">
-        <div className="grid grid-cols-2 sm:grid-cols-4 grid-rows-2 gap-4">
-          <div
-            className="col-span-2 row-span-2 p-4 sm:border-r-2 cursor-pointer"
-            onClick={() => openModal("/images/photovernhet.png")}
-          >
-            <a
-              href="https://medium.com/@6233/my-portfolio-project-photo-vernhet-d1825fac5e95"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <h2 className="text-lg sm:text-xl font-bold mb-2 relative inline-block after:content-[''] after:absolute after:w-0 after:left-0 after:-bottom-1 after:h-[2px] after:bg-black after:transition-width after:duration-300 hover:after:w-full">
-                End of year project:
-              </h2>
-            </a>
-            <img
-              src="/images/photovernhet.png"
-              alt="photoVernhetProject"
-              className="mt-4 rounded-md shadow-xl object-cover w-full"
-            />
-          </div>
-          <div
-            className="col-span-1 row-span-1 p-4 cursor-pointer"
-            onClick={() => openModal("./images/webfetcher.png")}
-          >
-            <a
-              href="https://github.com/truuue/webFetcher"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <h2 className="text-lg sm:text-xl font-bold mb-2 relative inline-block after:content-[''] after:absolute after:w-0 after:left-0 after:-bottom-1 after:h-[2px] after:bg-black after:transition-width after:duration-300 hover:after:w-full">
-                Web Fetcher:
-              </h2>
-            </a>
-            <img
-              src="./images/webfetcher.png"
-              alt="webFetcherProject"
-              className="mt-4 rounded-md shadow-xl object-cover h-44 w-full"
-            />
-          </div>
-          <div
-            className="col-span-1 row-span-1 p-4 cursor-pointer"
-            onClick={() => openModal("./images/twelv.png")}
-          >
-            <a href="https://twelv.fr/" target="_blank" rel="noreferrer">
-              <h2 className="text-lg sm:text-xl font-bold mb-2 relative inline-block after:content-[''] after:absolute after:w-0 after:left-0 after:-bottom-1 after:h-[2px] after:bg-black after:transition-width after:duration-300 hover:after:w-full">
-                Twelv:
-              </h2>
-            </a>
-            <img
-              src="./images/twelv.png"
-              alt="twelv img"
-              className="mt-4 rounded-md shadow-xl object-cover h-44 w-full"
-            />
-          </div>
-          <div className="col-span-2 row-span-1 p-4 sm:border-t-2">
-            <h2 className="text-lg sm:text-xl font-bold mb-2 relative inline-block after:content-[''] after:absolute after:w-0 after:left-0 after:-bottom-1 after:h-[2px] after:bg-black after:transition-width after:duration-300 hover:after:w-full">
-              Crédit Agricole:
-            </h2>
-            <p className="text-center">Coming soon...</p>
-          </div>
-        </div>
+        <BentoGrid>
+          <BentoCard
+            name="Projet de fin d'année"
+            className="aspect-auto sm:col-span-4 sm:row-span-2 sm:aspect-[16/9]"
+            background={
+              <img
+                src="/images/photovernhet.png"
+                alt="Projet Vernhet"
+                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            }
+            description="Une exploration innovante de la photographie numérique, fusionnant art et technologie."
+            href="https://medium.com/@6233/my-portfolio-project-photo-vernhet-d1825fac5e95"
+            cta="Explorer le projet"
+            openModal={() => openModal("/images/photovernhet.png")}
+          />
+          <BentoCard
+            name="Web Fetcher"
+            className="aspect-auto sm:col-span-2 sm:row-span-2"
+            background={
+              <img
+                src="./images/webfetcher.png"
+                alt="Web Fetcher"
+                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            }
+            description="Un outil puissant pour extraire et analyser des données web à grande échelle."
+            href="https://github.com/truuue/webFetcher"
+            cta="Voir le code"
+            openModal={() => openModal("./images/webfetcher.png")}
+          />
+          <BentoCard
+            name="Twelv"
+            className="aspect-auto sm:col-span-3 sm:aspect-[4/3]"
+            background={
+              <img
+                src="./images/twelv.png"
+                alt="Twelv"
+                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            }
+            description="Une application de rencontres révolutionnaire basée sur l'astrologie et l'IA."
+            href="https://twelv.fr/"
+            cta="Découvrir l'app"
+            openModal={() => openModal("./images/twelv.png")}
+          />
+          <BentoCard
+            name="Crédit Agricole"
+            className="aspect-auto sm:col-span-3 sm:aspect-[4/3]"
+            background={
+              <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-gray-100 to-gray-700">
+                <span className="text-2xl font-bold text-white">
+                  Bientôt disponible
+                </span>
+              </div>
+            }
+            description="Un projet innovant en cours de développement pour l'une des plus grandes banques françaises."
+            href="#"
+            cta="En savoir plus"
+            openModal={() => {}}
+          />
+        </BentoGrid>
       </div>
     </div>
   );
