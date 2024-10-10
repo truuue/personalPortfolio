@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,11 +8,11 @@ const Header = () => {
   };
 
   return (
-    <header className="w-full flex justify-center items-center z-10 sticky top-[0.75rem]">
-      <div className="sm:w-3/5 w-1/3 p-3 flex justify-between sm:justify-center backdrop-blur-md shadow-md border-solid rounded-[2rem]">
+    <header className="sticky top-[0.75rem] z-10 flex w-full items-center justify-center">
+      <div className="flex w-1/3 justify-between rounded-[2rem] border-solid p-3 shadow-md backdrop-blur-md sm:w-3/5 sm:justify-center">
         <nav className="w-full sm:w-4/5">
-          <div className="flex justify-between items-center sm:hidden">
-            <h1 className="font-medium w-4/5 flex justify-center items-center">
+          <div className="flex items-center justify-between sm:hidden">
+            <h1 className="flex w-4/5 items-center justify-center font-medium">
               menu
             </h1>
             <button className="text-xl" onClick={toggleMenu}>
@@ -20,20 +20,20 @@ const Header = () => {
             </button>
           </div>
           <ul
-            className={`sm:flex sm:justify-between font-medium ${
+            className={`font-medium sm:flex sm:justify-between ${
               isOpen ? "block" : "hidden"
             } sm:block`}
           >
-            <li className="transition ease-in-out delay-50 hover:text-gray-400 mt-2 sm:mt-0 text-center">
+            <li className="delay-50 mt-2 text-center transition ease-in-out hover:text-gray-400 sm:mt-0">
               <a href="#home">Home</a>
             </li>
-            <li className="transition ease-in-out delay-50 hover:text-gray-400 mt-2 sm:mt-0 text-center">
+            <li className="delay-50 mt-2 text-center transition ease-in-out hover:text-gray-400 sm:mt-0">
               <a href="#about">About</a>
             </li>
-            <li className="transition ease-in-out delay-50 hover:text-gray-400 mt-2 sm:mt-0 text-center">
+            <li className="delay-50 mt-2 text-center transition ease-in-out hover:text-gray-400 sm:mt-0">
               <a href="#projects">Projects</a>
             </li>
-            <li className="transition ease-in-out delay-50 hover:text-gray-400 mt-2 sm:mt-0 text-center">
+            <li className="delay-50 mt-2 text-center transition ease-in-out hover:text-gray-400 sm:mt-0">
               <a href="#contact">Contact</a>
             </li>
           </ul>
