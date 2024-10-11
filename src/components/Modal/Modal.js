@@ -9,7 +9,7 @@ const Modal = ({ isOpen, closeModal, selectedImage }) => {
         <img
           src={selectedImage}
           alt="Enlarged project"
-          className="max-h-[80vh] w-auto max-w-full rounded-xl shadow-xl"
+          className="max-h-[80dvh] w-auto max-w-full rounded-xl shadow-xl"
         />
         <button
           className="absolute right-5 top-5 size-10 rounded-lg border border-primary/50 bg-white text-3xl text-black shadow-lg transition-all duration-300 hover:bg-primary/10 hover:shadow-xl"
