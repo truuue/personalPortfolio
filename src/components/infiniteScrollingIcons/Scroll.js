@@ -57,6 +57,7 @@ const Scroll = () => {
     { src: "/icons/javascript-color.svg", alt: "jsIcon" },
     { src: "/icons/jquery-color.svg", alt: "jqueryIcon" },
     { src: "/icons/nodejs-color.svg", alt: "nodeIcon" },
+    { src: "/icons/nvm-color.svg", alt: "nvmIcon" },
     { src: "/icons/npm-color.svg", alt: "npmIcon" },
     { src: "/icons/react-color.svg", alt: "reactIcon" },
     { src: "/icons/next-js.svg", alt: "nextIcon" },
