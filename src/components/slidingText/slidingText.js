@@ -45,10 +45,13 @@ const WordRotate = ({
 
 const SlidingText = () => {
   return (
-    <div className="flex items-center justify-center text-center text-lg text-primary max-[500px]:flex-col">
-      <span>I am a</span>
-      <WordRotate words={["Front-end", "Back-end"]} className="mx-2" />
-      <span>developer, so a Full-Stack developer !</span>
+    <div className="flex items-center justify-center text-center text-lg text-primary max-[535px]:flex-col">
+      <div className="flex items-center max-[535px]:mb-2">
+        <span>I am a</span>
+        <WordRotate words={["Front-end", "Back-end"]} className="mx-2" />
+        <span>developer,</span>
+      </div>
+      <span className="ml-2">so a Full-Stack developer !</span>
     </div>
   );
 };
