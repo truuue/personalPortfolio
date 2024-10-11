@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+import React from "react";
+
 const cn = (...classes) => classes.filter(Boolean).join(" ");
 
 const BentoGrid = ({ children, className }) => {
@@ -22,12 +25,16 @@ const BentoCard = ({
   cta,
   openModal,
 }) => (
-  <div
+  <motion.div
     className={cn(
       "group relative cursor-pointer overflow-hidden rounded-xl bg-white shadow-md transition-all hover:shadow-lg",
       className
     )}
     onClick={openModal}
+    initial={{ opacity: 0, filter: "blur(5px)" }}
+    whileInView={{ opacity: 1, filter: "blur(0px)" }}
+    transition={{ duration: 0.6 }}
+    viewport={{ once: true, amount: 0.5 }}
   >
     <div className="absolute inset-0 z-0">{background}</div>
     <div className="relative z-10 flex h-full flex-col justify-end bg-gradient-to-t from-black/95 to-transparent p-6">
@@ -41,7 +48,7 @@ const BentoCard = ({
         {cta}
       </a>
     </div>
-  </div>
+  </motion.div>
 );
 
 const ProjectsSection = ({ openModal }) => {
@@ -131,4 +138,4 @@ const ProjectsSection = ({ openModal }) => {
   );
 };
 
-export default ProjectsSection;
+export default React.memo(ProjectsSection);
