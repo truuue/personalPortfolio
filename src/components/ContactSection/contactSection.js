@@ -99,7 +99,7 @@ const ContactSection = ({ form, sendEmail }) => {
   return (
     <div
       id="contact"
-      className="flex h-[100dvh] flex-col items-center justify-evenly p-4 sm:mt-20 sm:p-8"
+      className="flex h-full flex-col items-center justify-evenly p-4 sm:mt-20 sm:h-screen sm:p-8"
     >
       <div>
         <h2 className="mb-4 text-center text-3xl font-bold text-primary sm:mb-8 sm:text-4xl">
