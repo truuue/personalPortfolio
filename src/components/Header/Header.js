@@ -8,7 +8,7 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-[0.75rem] z-10 flex w-full items-center justify-center text-primary">
+    <header className="sticky top-[0.75rem] z-50 flex w-full items-center justify-center text-primary">
       <div className="flex w-1/3 justify-between rounded-[2rem] border-solid p-3 shadow-md backdrop-blur-md sm:w-3/5 sm:justify-center">
         <nav className="w-full sm:w-4/5">
           <div className="flex items-center justify-between sm:hidden">
