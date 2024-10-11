@@ -1,4 +1,4 @@
-import React, { useState, lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
@@ -30,8 +30,8 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
         <Modal
           isOpen={!!modalImage}
-        closeModal={closeModal}
-        selectedImage={modalImage}
+          closeModal={closeModal}
+          selectedImage={modalImage}
         />
       </Suspense>
       <div className="fixed inset-0 z-[-1] h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
