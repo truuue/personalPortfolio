@@ -14,7 +14,6 @@ function App() {
   }, []);
 
   const openModal = (imageSrc) => {
-    console.log("openModal called with:", imageSrc);
     setModalImage(imageSrc);
   };
 

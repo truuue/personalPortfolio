@@ -1,6 +1,4 @@
 const Modal = ({ isOpen, closeModal, selectedImage }) => {
-  console.log("Modal render:", { isOpen, selectedImage });
-
   if (!isOpen) return null;
 
   return (

@@ -15,4 +15,4 @@ root.render(
 );
 
 // If you want to start measuring performance in your app use this
-reportWebVitals(console.log);
+reportWebVitals();
