@@ -37,27 +37,21 @@ const NewFormComponent = ({ onSendClick }) => {
       {/* chat */}
       <div className="flex h-4/5 w-11/12 items-center justify-center">
         <div className="flex size-full flex-col">
-          <div className="flex h-1/3 w-full flex-col items-end justify-end">
-            <div className="mr-4 mt-10 flex h-8 w-52 items-center justify-end rounded-3xl bg-green-600 p-4">
-              <p className="text-pretty text-white">Don't be shy, text me!</p>
-            </div>
-
-            <div className="mr-4 mt-[3px] flex h-8 w-20 items-center justify-end rounded-3xl bg-green-600 p-4">
-              <p className="text-pretty text-white">noeuil..</p>
+          <div className="flex h-1/3 w-full flex-col items-start justify-end">
+            <div className="ml-4 mt-10 flex h-auto w-auto max-w-52 items-center justify-start rounded-xl bg-black/20 p-4">
+              <p className="text-pretty text-white">Bonjour Noah ! J'ai vu votre portfolio et j'aimerais discuter d'un projet potentiel.</p>
             </div>
           </div>
 
-          <div className="flex h-1/3 w-full flex-col items-start justify-center">
-            <div className="ml-4 flex h-8 w-28 items-center justify-start rounded-3xl bg-black/20 p-4">
-              <p className="text-pretty text-white">But, how ?</p>
+          <div className="flex h-2/3 w-full flex-col items-end justify-start">
+            <div className="mr-4 mt-4 flex h-auto w-auto max-w-52 items-center justify-end rounded-xl bg-green-600 p-4">
+              <p className="text-pretty text-white">Merci pour votre intérêt ! Pour me contacter, cliquez simplement sur le bouton d'envoi ci-dessous.</p>
             </div>
           </div>
 
-          <div className="flex h-1/3 w-full flex-col items-end justify-start">
-            <div className="mr-4 flex h-12 w-52 items-center justify-end rounded-xl bg-green-600 p-4">
-              <p className="text-pretty text-white">
-                Just by clicking on the send button.
-              </p>
+          <div className="flex h-1/3 w-full flex-col items-start justify-start">
+            <div className="ml-4 flex h-auto w-auto max-w-52 items-center justify-start rounded-xl bg-black/20 p-4">
+              <p className="text-pretty text-white">D'accord, merci beaucoup. À tout de suite !</p>
             </div>
           </div>
         </div>
