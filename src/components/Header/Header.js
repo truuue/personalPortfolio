@@ -11,13 +11,12 @@ const Header = () => {
     <header className="sticky top-[0.75rem] z-50 flex w-full items-center justify-center text-primary">
       <div className="flex w-1/3 justify-between rounded-[2rem] border-solid p-3 shadow-md backdrop-blur-md sm:w-3/5 sm:justify-center">
         <nav className="w-full sm:w-4/5">
-          <div className="flex items-center justify-between sm:hidden">
+          <div className="flex items-center justify-center sm:hidden">
             <h1 className="flex w-4/5 items-center justify-center font-medium">
-              menu
+              <button className="text-center text-xl" onClick={toggleMenu}>
+                menu
+              </button>
             </h1>
-            <button className="text-xl" onClick={toggleMenu}>
-              &#9776;
-            </button>
           </div>
           <ul
             className={`font-medium transition-all duration-300 sm:flex sm:justify-between ${

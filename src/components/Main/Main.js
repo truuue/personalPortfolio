@@ -26,7 +26,7 @@ const Main = ({ openModal }) => {
   };
 
   return (
-    <main>
+    <main className="space-y-20">
       <HomeSection />
       <AboutSection />
       <ProjectsSection openModal={openModal} />
