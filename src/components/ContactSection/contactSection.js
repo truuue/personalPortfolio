@@ -113,7 +113,7 @@ const ContactSection = () => {
       clipPath="url(#roundedCorners)"
       className={`transition-all duration-300 ${
         isOpening ? 'scale-95 opacity-0' : 'scale-100 opacity-100'
-      } ${showNewForm ? '' : 'hidden'}`}
+      } ${showNewForm ? '' : ''}`}
     />
   );
 
