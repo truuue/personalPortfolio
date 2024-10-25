@@ -5,13 +5,22 @@ import { useState } from 'react';
 const ContactSection = () => {
   const [showNewForm, setShowNewForm] = useState(true);
   const [isOpening, setIsOpening] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
   const handleFormTransition = () => {
     setIsOpening(true);
     setTimeout(() => {
       setShowNewForm(false);
       setIsOpening(false);
-    }, 300); // Durée de l'animation
+    }, 300);
+  };
+
+  const handleBackTransition = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setShowNewForm(true);
+      setIsClosing(false);
+    }, 300);
   };
 
   const Iphone15Pro = ({ width = 325, height = 662, src, children, ...props }) => {
@@ -151,7 +160,7 @@ const ContactSection = () => {
             {showNewForm ? (
               <NewFormComponent onSendClick={handleFormTransition} />
             ) : (
-              <FormComponent />
+              <FormComponent onBackClick={handleBackTransition} isClosing={isClosing} />
             )}
           </div>
         </div>

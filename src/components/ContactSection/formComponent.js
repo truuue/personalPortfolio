@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const FormComponent = ({ form, sendEmail }) => {
+const FormComponent = ({ form, sendEmail, onBackClick, isClosing }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -14,10 +14,12 @@ const FormComponent = ({ form, sendEmail }) => {
   };
 
   return (
-    <div className="flex size-full h-[662px] flex-col items-center justify-center">
+    <div className={`flex size-full h-[662px] flex-col items-center justify-center transition-all duration-300 ${
+      isClosing ? 'scale-95 opacity-0' : 'scale-100 opacity-100'
+    }`}>
       {/* header */}
       <div className="-ml-[1px] mt-7 flex h-20 w-[293px] items-end justify-between rounded-t-3xl">
-        <div className="relative left-1">
+        <div className="relative left-1 cursor-pointer" onClick={onBackClick}>
           <svg
             width="24"
             height="24"
