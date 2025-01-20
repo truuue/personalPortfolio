@@ -1,6 +1,6 @@
+import { useState } from "react";
 import FormComponent from "./formComponent";
 import NewFormComponent from "./newFormComponent";
-import { useState } from 'react';
 
 const ContactSection = () => {
   const [showNewForm, setShowNewForm] = useState(true);
@@ -23,7 +23,13 @@ const ContactSection = () => {
     }, 300);
   };
 
-  const Iphone15Pro = ({ width = 325, height = 662, src, children, ...props }) => {
+  const Iphone15Pro = ({
+    width = 325,
+    height = 662,
+    src,
+    children,
+    ...props
+  }) => {
     return (
       <svg
         width={width}
@@ -121,8 +127,8 @@ const ContactSection = () => {
       fill="rgba(0,0,0,0.1)"
       clipPath="url(#roundedCorners)"
       className={`transition-all duration-300 ${
-        isOpening ? 'scale-95 opacity-0' : 'scale-100 opacity-100'
-      } ${showNewForm ? '' : ''}`}
+        isOpening ? "scale-95 opacity-0" : "scale-100 opacity-100"
+      } ${showNewForm ? "" : ""}`}
     />
   );
 
@@ -154,13 +160,18 @@ const ContactSection = () => {
           <LightBackground isOpening={isOpening} showNewForm={showNewForm} />
         </Iphone15Pro>
         <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
-          <div className={`transition-all duration-300 ${
-            isOpening ? 'scale-95 opacity-0' : 'scale-100 opacity-100'
-          }`}>
+          <div
+            className={`transition-all duration-300 ${
+              isOpening ? "scale-95 opacity-0" : "scale-100 opacity-100"
+            }`}
+          >
             {showNewForm ? (
               <NewFormComponent onSendClick={handleFormTransition} />
             ) : (
-              <FormComponent onBackClick={handleBackTransition} isClosing={isClosing} />
+              <FormComponent
+                onBackClick={handleBackTransition}
+                isClosing={isClosing}
+              />
             )}
           </div>
         </div>

@@ -14,9 +14,11 @@ const FormComponent = ({ form, sendEmail, onBackClick, isClosing }) => {
   };
 
   return (
-    <div className={`flex size-full h-[662px] flex-col items-center justify-center transition-all duration-300 ${
-      isClosing ? 'scale-95 opacity-0' : 'scale-100 opacity-100'
-    }`}>
+    <div
+      className={`flex size-full h-[662px] flex-col items-center justify-center transition-all duration-300 ${
+        isClosing ? "scale-95 opacity-0" : "scale-100 opacity-100"
+      }`}
+    >
       {/* header */}
       <div className="-ml-[1px] mt-7 flex h-20 w-[293px] items-end justify-between rounded-t-3xl">
         <div className="relative left-1 cursor-pointer" onClick={onBackClick}>
@@ -50,7 +52,7 @@ const FormComponent = ({ form, sendEmail, onBackClick, isClosing }) => {
       </div>
 
       {/* Formulaire */}
-      <div className="flex flex-col h-4/5 w-11/12 items-center justify-center">
+      <div className="flex h-4/5 w-11/12 flex-col items-center justify-center">
         <form
           ref={form}
           onSubmit={handleSubmit}
